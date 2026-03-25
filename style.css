@@ -1,0 +1,202 @@
+/* ===== Base ===== */
+body {
+    font-family: Arial, sans-serif;
+    text-align: center;
+    margin-top: 40px;
+    background-color: #f2f2f2;
+    transition: background-color 0.5s, color 0.5s;
+}
+
+input {
+    padding: 10px;
+    width: 260px;
+    font-size: 16px;
+}
+
+button {
+    padding: 10px 15px;
+    font-size: 16px;
+    cursor: pointer;
+    margin: 5px;
+}
+
+/* ===== Top UI Container ===== */
+.top-container {
+    background: #eef7fb;
+    padding: 25px;
+    border-radius: 15px;
+    width: 90%;
+    max-width: 550px;
+    margin: auto;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+}
+
+.top-container h1 {
+    margin-bottom: 20px;
+}
+
+/* Input styling inside top container */
+.top-container input {
+    width: 80%;
+    padding: 12px;
+    font-size: 16px;
+    border-radius: 6px;
+    border: 1px solid #aaa;
+    outline: none;
+}
+
+/* Buttons row */
+.button-row {
+    margin-top: 20px;
+}
+
+.button-row button {
+    padding: 10px 16px;
+    font-size: 16px;
+    margin: 5px;
+    border-radius: 6px;
+    cursor: pointer;
+}
+
+/* ===== Chat Container ===== */
+.chat-container {
+    max-width: 500px;
+    margin: 25px auto;
+    display: flex;
+    flex-direction: column;
+}
+
+/* ===== User Cloud Bubble ===== */
+.user-bubble {
+    background: #dfe6e9;
+    padding: 12px 15px;
+    border-radius: 20px;
+    margin: 10px;
+    text-align: right;
+    position: relative;
+    align-self: flex-end;
+    max-width: 80%;
+}
+
+/* User bubble tail */
+.user-bubble::after {
+    content: "";
+    position: absolute;
+    right: -10px;
+    top: 15px;
+    border-width: 10px 0 10px 10px;
+    border-style: solid;
+    border-color: transparent transparent transparent #dfe6e9;
+}
+
+/* ===== Bot Cloud Bubble ===== */
+.bot-bubble {
+    background: #ffffff;
+    padding: 15px;
+    border-radius: 20px;
+    margin: 10px;
+    text-align: left;
+    position: relative;
+    box-shadow: 0 0 10px rgba(0,0,0,0.1);
+    max-width: 80%;
+}
+
+/* Bot bubble tail */
+.bot-bubble::before {
+    content: "";
+    position: absolute;
+    left: -10px;
+    top: 18px;
+    border-width: 10px 10px 10px 0;
+    border-style: solid;
+    border-color: transparent #ffffff transparent transparent;
+}
+
+/* ===== Result Wrapper ===== */
+#result {
+    padding: 10px;
+    border-radius: 12px;
+    animation: fadeIn 0.6s ease-in-out;
+}
+
+/* ===== Animation ===== */
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: scale(0.95);
+    }
+    to {
+        opacity: 1;
+        transform: scale(1);
+    }
+}
+
+/* ===== Mood Text Colors ===== */
+.mood-Happy { color: #2ecc71; }
+.mood-Sad { color: #3498db; }
+.mood-Angry { color: #e74c3c; }
+.mood-Stress { color: #f39c12; }
+.mood-Anxious { color: #9b59b6; }
+.mood-Excited { color: #f1c40f; }
+.mood-Neutral { color: #7f8c8d; }
+.mood-Bored { color: #8e6e53; }
+
+/* ===== 🌈 Mood Background Colors ===== */
+.bg-Happy { background-color: #e8f8f5; }
+.bg-Sad { background-color: #ebf5fb; }
+.bg-Angry { background-color: #fdecea; }
+.bg-Stress { background-color: #fef5e7; }
+.bg-Anxious { background-color: #f5eef8; }
+.bg-Excited { background-color: #fff9e6; }
+.bg-Neutral { background-color: #f4f6f6; }
+.bg-Bored { background-color: #f6f1ee; }
+
+/* ===== Confidence Bar ===== */
+.progress {
+    width: 100%;
+    background: #ddd;
+    border-radius: 10px;
+    overflow: hidden;
+    margin-top: 10px;
+}
+
+.progress-bar {
+    height: 15px;
+    width: 0%;
+    background: #2ecc71;
+    transition: width 0.6s;
+}
+
+/* ===== Dark Mode ===== */
+.dark-mode {
+    background-color: #121212;
+    color: #ffffff;
+}
+
+.dark-mode .top-container {
+    background: #1f2a33;
+    box-shadow: 0 4px 12px rgba(255,255,255,0.1);
+}
+
+.dark-mode .top-container input {
+    background: #2c2c2c;
+    color: white;
+    border: 1px solid #555;
+}
+
+.dark-mode .bot-bubble {
+    background: #1f1f1f;
+    box-shadow: 0 0 15px rgba(255,255,255,0.1);
+}
+
+.dark-mode .bot-bubble::before {
+    border-color: transparent #1f1f1f transparent transparent;
+}
+
+.dark-mode .user-bubble {
+    background: #2c2c2c;
+}
+
+.dark-mode .user-bubble::after {
+    border-color: transparent transparent transparent #2c2c2c;
+}
